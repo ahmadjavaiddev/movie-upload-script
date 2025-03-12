@@ -41,6 +41,7 @@ connectDB()
         "--disable-setuid-sandbox",
         "--disable-dev-shm-usage",
       ],
+      executablePath: '/usr/bin/chromium-browser',
       defaultViewport: null,
       dumpio: true,
     });
