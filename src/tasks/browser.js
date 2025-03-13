@@ -1,14 +1,13 @@
-import puppeteer from "puppeteer";
-// import puppeteer from "puppeteer-core";
+// import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
 import Redis from "ioredis";
 import { connectDB } from "../DB/index.js";
 import { addMovie, addMovieSrc, delay } from "../utils/index.js";
 import { requestsToBlock } from "../constants.js";
 
-const redisClient = new Redis(process.env.REDIS_URI);
-
 connectDB()
   .then(async () => {
+    const redisClient = new Redis(process.env.REDIS_URI);
     const browser = await puppeteer.launch({
       headless: false,
       args: [
@@ -16,7 +15,7 @@ connectDB()
         "--disable-setuid-sandbox",
         "--disable-dev-shm-usage",
       ],
-      // executablePath: "/usr/bin/chromium-browser",
+      executablePath: "/usr/bin/chromium-browser",
       defaultViewport: null,
       dumpio: true,
     });
