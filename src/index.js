@@ -10,7 +10,12 @@ dotenv.config();
 async function main() {
   while (true) {
     console.log(">> What do you want to do:");
-    const tools = ["Run:Threads", "Filter:Movies", "Push:Redis"];
+    const tools = [
+      "Run:Threads",
+      "Filter:Movies",
+      "Push:Redis",
+      "Retry:Movies",
+    ];
 
     const index = readlineSync.keyInSelect(tools, ">> Which Tool?");
     if (index === -1) {
@@ -34,6 +39,10 @@ async function main() {
         case "Push:Redis":
           console.log("Movies Adding to Redis");
           await pushToRedis();
+          break;
+        case "Retry:Movies":
+          console.log("Movies Adding to Redis");
+          await RunThreads("RETRY");
           break;
       }
       console.log("\nTask completed successfully!\n");
