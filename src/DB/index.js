@@ -3,15 +3,10 @@ import mongoose from "mongoose";
 const connectDB = async () => {
   try {
     const options = {
-      // dbName: "movies",
-      dbName: "movie-added",
+      dbName: process.env.DB_NAME,
     };
 
-    const conn = await mongoose.connect("mongodb://localhost:27017", options);
-    // const conn = await mongoose.connect(
-    //   "mongodb+srv://ahmadjavaiddev:fWjG9JgWNswAkQ98@cluster0.xledk.mongodb.net",
-    //   options
-    // );
+    const conn = await mongoose.connect(process.env.MONGODB_URI, options);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.log("Error ::", error);

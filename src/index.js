@@ -1,7 +1,10 @@
 // cdn4521
+import dotenv from "dotenv";
 import readlineSync from "readline-sync";
 import { filterMovies } from "./tasks/filterMovies.js";
 import { RunThreads } from "./tasks/threads.js";
+
+dotenv.config();
 
 async function main() {
   while (true) {

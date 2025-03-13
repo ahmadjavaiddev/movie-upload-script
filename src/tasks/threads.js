@@ -1,8 +1,12 @@
-const { Worker } = require("worker_threads");
-const path = require("path");
+import { Worker } from "worker_threads";
+import * as path from "path";
+import { fileURLToPath } from "url";
 
-const numThreads = 4; // Number of threads you want to create
-export function RunThreads() {
+const numThreads = 4;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export async function RunThreads() {
   for (let i = 0; i < numThreads; i++) {
     const worker = new Worker(path.resolve(__dirname, "browser.js"));
 
