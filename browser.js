@@ -777,7 +777,8 @@
 //   }
 // }
 
-const puppeteer = require("puppeteer");
+// const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
 const fs = require("fs");
 const MovieModel = require("./models/Movie.model.js");
 const connectDB = require("./DB/index.js");
@@ -821,12 +822,13 @@ const requestsToBlock = [
   connectDB()
     .then(async () => {
       const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         args: [
           "--no-sandbox",
           "--disable-setuid-sandbox",
           "--disable-dev-shm-usage",
         ],
+        executablePath: "/usr/bin/chromium-browser",
         defaultViewport: null,
         dumpio: true,
       });
