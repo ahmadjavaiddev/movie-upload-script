@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const connectDB = require("./DB");
+const connectDB = require("../DB");
 const axios = require("axios");
 const OUTPUT_FILE = path.join(__dirname, "indian.json");
 
