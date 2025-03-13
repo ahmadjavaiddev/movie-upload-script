@@ -6,11 +6,11 @@ const connectDB = async () => {
       dbName: "movies",
     };
 
-    // const conn = await mongoose.connect("mongodb://localhost:27017", options);
-    const conn = await mongoose.connect(
-      "mongodb+srv://ahmadjavaiddev:fWjG9JgWNswAkQ98@cluster0.xledk.mongodb.net",
-      options
-    );
+    const conn = await mongoose.connect("mongodb://localhost:27017", options);
+    // const conn = await mongoose.connect(
+    //   "mongodb+srv://ahmadjavaiddev:fWjG9JgWNswAkQ98@cluster0.xledk.mongodb.net",
+    //   options
+    // );
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.log("Error ::", error);
