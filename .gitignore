@@ -2,8 +2,7 @@
 
 # dependencies
 /node_modules
-/indian.json
-/moviePending.json
+/JSON
 /.pnp
 .pnp.*
 .yarn/*
