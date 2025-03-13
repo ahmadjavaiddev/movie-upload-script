@@ -9,7 +9,7 @@ connectDB()
   .then(async () => {
     const redisClient = new Redis(process.env.REDIS_URI);
     const browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
