@@ -1,7 +1,7 @@
 // cdn4521
 import dotenv from "dotenv";
 import readlineSync from "readline-sync";
-import { filterMovies } from "./tasks/filterMovies.js";
+// import { filterMovies } from "./tasks/filterMovies.js";
 import { RunThreads } from "./tasks/threads.js";
 import { pushToRedis } from "./tasks/pushToRedis.js";
 
@@ -27,10 +27,10 @@ async function main() {
           console.log("Running Threads");
           await RunThreads();
           break;
-        case "Filter:Movies":
-          console.log("Running the Filter All Movies Task");
-          await filterMovies();
-          break;
+        // case "Filter:Movies":
+        //   console.log("Running the Filter All Movies Task");
+        //   await filterMovies();
+        //   break;
         case "Push:Redis":
           console.log("Movies Adding to Redis");
           await pushToRedis();
