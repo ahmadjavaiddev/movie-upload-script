@@ -24,7 +24,7 @@ connectDB()
     let movieStr = await redisClient.lpop("moviesQueue");
     while (movieStr) {
       const movie = JSON.parse(movieStr);
-      const info = `${movie.title} ${movie.id}`;
+      const info = `${movie.title} ${movie.movieId}`;
       console.log("Processing the Movie ::", info);
 
       let page;

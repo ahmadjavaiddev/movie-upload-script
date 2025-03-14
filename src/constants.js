@@ -22,3 +22,16 @@ export const requestsToBlock = [
   "/js/adblock.js",
   "gstatic.com/cv/js/sender/v1",
 ];
+
+const MoviesHistory = [
+  {
+    url: "https://www.hdmovie2.uk/genre/action",
+    maxLength: 156,
+    fileName: "action.json",
+  },
+  {
+    url: "https://www.hdmovie2.uk/genre/adventure",
+    maxLength: 68,
+    fileName: "adventure.json",
+  },
+];
